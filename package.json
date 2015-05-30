@@ -1,7 +1,7 @@
 {
   "name": "grunt-selenium-cucumber",
   "description": "Grunt tasks for running Selenium browser automation tests using CucumberJS",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/zs-zs/grunt-selenium-cucumber",
   "author": {
     "name": "zs-zs",
@@ -32,17 +32,17 @@
     "wd": "^0.3.11"
   },
   "peerDependencies": {
-    "grunt": "~0.4.5"
+    "grunt": "~0.4.5",
+    "grunt-concurrent": "^1.0.0",
+    "grunt-cucumberjs": "^0.7.0",
+    "grunt-env": "^0.4.4",
+    "grunt-selenium-standalone": "^0.1.2"
   },
   "keywords": [
     "gruntplugin"
   ],
   "dependencies": {
     "cucumber": "^0.4.9",
-    "grunt-concurrent": "^1.0.0",
-    "grunt-cucumberjs": "^0.7.0",
-    "grunt-env": "^0.4.4",
-    "grunt-selenium-standalone": "^0.1.2",
     "lodash": "^3.9.3"
   }
 }
