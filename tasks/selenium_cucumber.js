@@ -23,21 +23,27 @@ module.exports = function(grunt) {
 		};
 	});
 
+	var cucumberOptionsConfig = grunt.config.get('selenium_cucumber.cucumberjs.options');
+	var cucumberFeaturesConfig = grunt.config.get('selenium_cucumber.cucumberjs.features');
+
+	var seleniumVersionConfig = grunt.config.get('selenium_cucumber.seleniumVersion');
+	var seleniumDownloadUrlConfig = grunt.config.get('selenium_cucumber.seleniumDownloadURL');
+
 	var gruntConfig = {
 		env: {}, // dynamically filled
 		cucumberjs: {
-			options: {
+			options: _.defaults(cucumberOptionsConfig, {
 				format: 'html',
 				output: 'my_report.html',
 				theme: 'bootstrap',
 				debug: false
-			},
-			features: ['test/specs/features']
+			}),
+			features: _.isEmpty(cucumberFeaturesConfig) ? ['tests/specs/features'] : cucumberFeaturesConfig
 		},
 		'selenium_standalone': {
 			testConfig: {
-				seleniumVersion: '2.45.0',
-				seleniumDownloadURL: 'http://selenium-release.storage.googleapis.com',
+				seleniumVersion: seleniumVersionConfig || '2.45.0',
+				seleniumDownloadURL: seleniumDownloadUrlConfig || 'http://selenium-release.storage.googleapis.com',
 				drivers: testDrivers
 			}
 		},
