@@ -33,7 +33,7 @@
   },
   "peerDependencies": {
     "cucumber": "*",
-    "grunt": "~0.4.5",
+    "grunt": ">=0.4.0",
     "grunt-concurrent": "^1.0.0",
     "grunt-cucumberjs": "^0.7.0",
     "grunt-env": "^0.4.4",
